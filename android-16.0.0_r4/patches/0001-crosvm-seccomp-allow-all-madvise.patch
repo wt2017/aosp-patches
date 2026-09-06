@@ -1,0 +1,44 @@
+--- a/x86_64-linux-gnu/etc/seccomp/gpu_device.policy
++++ b/x86_64-linux-gnu/etc/seccomp/gpu_device.policy
+@@ -31,7 +31,7 @@
+ io_uring_register: 1
+ io_uring_enter: 1
+ kill: 1
+-madvise: arg2 == MADV_DONTNEED || arg2 == MADV_DONTDUMP || arg2 == MADV_REMOVE || arg2 == MADV_MERGEABLE || arg2 == MADV_FREE
++madvise: 1
+ membarrier: 1
+ # memfd_create is used for sharing memory with wayland.
+ # For normal use case, we allow arg1 == MFD_CLOEXEC|MFD_ALLOW_SEALING, with or without MFD_NOEXEC_SEAL.
+--- a/x86_64-linux-gnu/etc/seccomp/gpu_render_server.policy
++++ b/x86_64-linux-gnu/etc/seccomp/gpu_render_server.policy
+@@ -31,7 +31,7 @@
+ io_uring_register: 1
+ io_uring_enter: 1
+ kill: 1
+-madvise: arg2 == MADV_DONTNEED || arg2 == MADV_DONTDUMP || arg2 == MADV_REMOVE || arg2 == MADV_MERGEABLE || arg2 == MADV_FREE
++madvise: 1
+ membarrier: 1
+ # memfd_create is used for sharing memory with wayland.
+ # For normal use case, we allow arg1 == MFD_CLOEXEC|MFD_ALLOW_SEALING, with or without MFD_NOEXEC_SEAL.
+--- a/x86_64-linux-gnu/etc/seccomp/video_device.policy
++++ b/x86_64-linux-gnu/etc/seccomp/video_device.policy
+@@ -29,7 +29,7 @@
+ io_uring_enter: 1
+ kill: 1
+ lseek: 1
+-madvise: arg2 == MADV_DONTNEED || arg2 == MADV_DONTDUMP || arg2 == MADV_REMOVE || arg2 == MADV_MERGEABLE || arg2 == MADV_FREE
++madvise: 1
+ membarrier: 1
+ mremap: 1
+ munmap: 1
+--- a/x86_64-linux-gnu/etc/seccomp/wl_device.policy
++++ b/x86_64-linux-gnu/etc/seccomp/wl_device.policy
+@@ -31,7 +31,7 @@
+ io_uring_register: 1
+ io_uring_enter: 1
+ kill: 1
+-madvise: arg2 == MADV_DONTNEED || arg2 == MADV_DONTDUMP || arg2 == MADV_REMOVE || arg2 == MADV_MERGEABLE || arg2 == MADV_FREE
++madvise: 1
+ membarrier: 1
+ # memfd_create is used for sharing memory with wayland.
+ # For normal use case, we allow arg1 == MFD_CLOEXEC|MFD_ALLOW_SEALING, with or without MFD_NOEXEC_SEAL.
